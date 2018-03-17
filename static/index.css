@@ -1,0 +1,156 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.app {
+    font-size: 32px;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.app__imageLoader {
+    position: absolute;
+    height: 0px;
+    top: 0;
+    overflow: hidden;
+}
+
+.app__card img {
+    max-width: 360px;
+}
+
+.app__test {
+    display: none;
+}
+
+.screen {
+    height: 100%;;
+}
+
+.intro {
+    padding: 20vh 20px 0;
+    font-size: 16px;
+    max-width: 30em;
+    margin: auto;
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.intro__header {
+    font-size: 10vw;
+    line-height: 1.1em;
+    font-weight: bolder;
+    margin-bottom: 16px;
+}
+
+.intro__start {
+    display: block;
+}
+
+.intro__descr {
+    margin-bottom: 3em;
+    line-height: 1.4em;
+}
+
+.app__card {
+    position: absolute;
+    left: 5vw;
+    right: 5vw;
+    top: 5vh;
+    height: 70vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.app__card:nth-child(1) {
+    z-index: 10;
+    display: block;
+}
+
+.app__card:nth-child(2) {
+    z-index: 8;
+    top: 6vh;
+    display: block;
+}
+
+.app__card:nth-child(2) * {
+    display: none;
+}
+
+.app__card:nth-child(3) {
+    z-index: 6;
+    top: 7vh;
+    display: block;
+}
+
+.app__card:nth-child(3) * {
+    display: none;
+}
+
+.app__card img {
+    flex-grow: 1;
+    object-fit: contain;
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+}
+
+.button {
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1) inset;
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none;
+    background-color: #fcfcfc;
+    perspective: 500px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.button:active {
+    transform: scale(0.98);
+    background-color: #ccc;
+}
+
+.button_type_primary {
+    background-color: #fc0;
+}
+
+.button_type_primary:active {
+    background-color: #fb0;
+}
+
+.button:disabled {
+    background: #fff;
+    color: #999;
+}
+
+
+.card__options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 9px;
+}
+
+.card__option {
+    width: calc(50% - 20px);
+    margin: 4px 4px;
+}
+
+button.card__option_right:active {
+    background-color: lightgreen;
+}
+
+button.card__option_wrong:active {
+    background-color: lightcoral;
+}

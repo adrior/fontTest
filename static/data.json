@@ -1,0 +1,42 @@
+[
+    {
+        "fontName": "Arial",
+        "fileName": "Arial"
+    },
+    {
+        "fontName": "Droid",
+        "fileName": "Droid"
+    },
+    {
+        "fontName": "Helvetica Neue",
+        "fileName": "HelveticaNeue"
+    },
+    {
+        "fontName": "Lucida Grande",
+        "fileName": "LucidaGrande"
+    },
+    {
+        "fontName": "Roboto",
+        "fileName": "Roboto"
+    },
+    {
+        "fontName": "Segoe UI",
+        "fileName": "SegoeUI"
+    },
+    {
+        "fontName": "SF UI Text",
+        "fileName": "SFUIText"
+    },
+    {
+        "fontName": "Tahoma",
+        "fileName": "Tahoma"
+    },
+    {
+        "fontName": "Trebuchet MS",
+        "fileName": "TrebuchetMS"
+    },
+    {
+        "fontName": "Verdana",
+        "fileName": "Verdana"
+    }
+]
