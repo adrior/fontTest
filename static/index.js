@@ -7,6 +7,9 @@ var App = {
     ],
     screens: [
 
+    ],
+    answers: [
+
     ]
 }
 
@@ -21,6 +24,14 @@ function ready() {
     let startButton = document.querySelector('.intro__start');
     startButton.disabled = false;
     startButton.innerText = 'Начать тест';
+    startButton.addEventListener('click', start)
+}
+
+function start() {
+    let intro = document.querySelector('.intro');
+    let test = document.querySelector('.test');
+    test.style.display = 'block';
+    intro.style.display = 'none';
 }
 
 function loadData() {
@@ -66,40 +77,43 @@ function generateScreens(data) {
         variants.forEach( option => {
             let fontName = randomizedFonts[option].fontName;
             optionsContainer.innerHTML += `
-                <button class="button card__option ${font.fontName === fontName ? 'card__option_right' : 'card__option_wrong'}" data-font="${fontName}" onclick="checkcard(this)">${fontName}</button>
+                <button class="button card__option ${font.fontName === fontName ? 'card__option_right' : 'card__option_wrong'}" data-font="${fontName}" onclick="checkAnswer(this)">${fontName}</button>
             `
         } )
         container.appendChild(card);
     })
 }
 
-function checkcard(target) {
-    let correctcard = target.parentNode.parentNode.dataset.font;
-    if (target.dataset.font === correctcard) {
-        cardIsCorrect(correctcard);
-    } else {
-        cardIsFalse(correctcard);
-    }
+function checkAnswer(target) {
+    let chosen = target.dataset.font;
+    let correctAnswer = target.parentNode.parentNode.dataset.font;
+    App.answers.push({
+        correct: correctAnswer,
+        chosen: chosen
+    })
+    showNext();
 }
 
 function showNext() {
     let container = document.querySelector('.app__test');
     let currentCard = container.querySelector('.app__card');
     currentCard.parentNode.removeChild(currentCard);
+    if (!container.querySelector('.app__card')) {
+        showResults();
+    }
 }
 
-function cardIsCorrect(fontName) {
-    console.log('Угадал');
-    showNext();
+function showResults() {
+    console.log(App.answers);
+    let container = document.querySelector('.compare');
+    App.answers.forEach(ans => {
+        let item = ``
+    })
 }
 
-
-
-function cardIsFalse(fontName) {
-    console.log('Ошибся');
-    showNext();
+function getFontByName(){
+    
 }
-
 
 function getRandomFour(arr, current) {
     let randomed = [];
